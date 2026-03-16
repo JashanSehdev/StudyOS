@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #6C63FF;
+  --color-surface: #1E1E2E;
+  --color-background: #13131F;
+}
+
+@theme {
+  --color-primary: #6C63FF;
+  --color-surface: #1E1E2E;
+  --color-background: #13131F;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
