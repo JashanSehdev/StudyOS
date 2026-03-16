@@ -70,12 +70,12 @@ const createTables = async () => {
 
         await pool.query(`
             CREATE TABLE IF NOT EXISTS subjects (
-              id            INTEGER PRIMARY KEY,
+              id            SERIAL PRIMARY KEY,
               user_id       INTEGER REFERENCES users(id) ON DELETE CASCADE,
               name          VARCHAR(100) NOT NULL,
               credits       INTEGER NOT NULL,
               grade         VARCHAR(5),
-              grade_points  DECIMAL(3,2),
+              grade_point   DECIMAL(3,2),
               semester      VARCHAR(20)
             
             )
