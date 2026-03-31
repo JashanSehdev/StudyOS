@@ -13,7 +13,7 @@ dotenv.config()
 const app = express()
 
 app.use(cors({
-    origin: process.env.CLIENT_URL  ,
+    origin: process.env.CLIENT_URL,
     credentials: true
 }))
 
@@ -30,7 +30,7 @@ app.use("/api/notes",            notesRoutes)
 
 
 app.get("/", (req, res) => {
-    res.json({ message : ' Study API is running'})
+    res.json({ message : ` Study API is running for ${process.env.CLIENT_URL}`})
 })
 
 app.listen(process.env.PORT, ()=>{
