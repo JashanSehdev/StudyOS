@@ -13,10 +13,15 @@ export function AuthProvider( {children} ) {
         setUser(userData)
     }
 
-    const logout = async() => {
-        await API.post('/auth/logout')
-        localStorage.removeItem('user')
-        setUser(null)
+    const logout = async () => {
+        try {
+            await API.post('/auth/logout')
+        } catch (error) {
+            console.warn('Logout API failed, continuing with local logout:', error)
+        } finally {
+            localStorage.clear()
+            setUser(null)
+        }
     }
 
     return(
